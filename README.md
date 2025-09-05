@@ -6,13 +6,13 @@ This lab outlines the core architecture decisions for enabling secure and effici
 
 #### Written Reflection
 
-1. **CORS Explained:** **_In your own words, explain what a CORS error is and why it occurs in a typical MERN stack application with separate client and server repositories. Describe two different strategies a developer could use to resolve CORS issues during local development._**
+1. **_CORS Explained: In your own words, explain what a CORS error is and why it occurs in a typical MERN stack application with separate client and server repositories. Describe two different strategies a developer could use to resolve CORS issues during local development._**
 
 A CORS (Cross-Origin Resource Sharing) error is a browser security mechanism that blocks a web application running at one origin (domain, protocol, or port) from requesting resources from a different origin. This is called the same-origin policy.
 
 In a typical MERN stack, this error occurs because React client (e.g., http://localhost:3000) and Express/Node.js server (e.g., http://localhost:5000) are running on different ports. The browser sees them as different origins and, for safety, blocks requests from the client to the server unless the server explicitly grants permission.
 
-<u>Strategies to Resolve CORS in Development</u>
+**Strategies to Resolve CORS in Development**
 
 - 1. Enable CORS on the Server: The standard solution is to use the cors npm package in Express server.
 - We can allow our specific client origin:
@@ -30,7 +30,7 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 
 ---
 
-2. **Environment Management:** ***Why is it considered a bad practice to hardcode API URLs directly into client-side React code? Explain how environment variables (.env files) help solve this on both the client (REACT*APP*...) and server (dotenv package).***
+2. **_Environment Management: Why is it considered a bad practice to hardcode API URLs directly into client-side React code? Explain how environment variables (.env files) help solve this on both the client (REACT*APP*...) and server (dotenv package)._**
 
 Environment variables allow us to externalize configuration, keeping sensitive data and environment-specific details out of our source code. This enables us to use different API endpoints for development, testing, and production without altering the application logic.
 
@@ -46,7 +46,7 @@ In summary, using environment variables decouples configuration from code, enhan
 
 ---
 
-3. **Data Fetching Trade-offs:** **_The lessons covered both the native fetch API and the axios library for making API requests. Based on the resources and your own understanding, describe one key advantage of using axios over fetch for a complex application._**
+3. **_Data Fetching Trade-offs:The lessons covered both the native fetch API and the axios library for making API requests. Based on the resources and your own understanding, describe one key advantage of using axios over fetch for a complex application._**
 
 One key advantage of using Axios over Fetch for complex applications is its ability to automatically transform JSON data, simplifying the data handling process. With Axios, we don't need to manually parse JSON responses using response.json(), as it's done automatically. This not only reduces boilerplate code but also minimizes potential errors.
 
