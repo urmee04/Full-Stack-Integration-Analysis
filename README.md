@@ -1,10 +1,10 @@
-### Lab 16.1: Full-Stack Integration
+## Lab 16.1: Full-Stack Integration
 
 This lab outlines the core architecture decisions for enabling secure and efficient communication between the React client and Express server in our MERN stack application.
 
 ---
 
-#### Written Reflection
+### Written Reflection
 
 1. **_CORS Explained: In your own words, explain what a CORS error is and why it occurs in a typical MERN stack application with separate client and server repositories. Describe two different strategies a developer could use to resolve CORS issues during local development._**
 
@@ -14,7 +14,7 @@ In a typical MERN stack, this error occurs because React client (e.g., http://lo
 
 **Strategies to Resolve CORS in Development**
 
-- 1. Enable CORS on the Server: The standard solution is to use the cors npm package in Express server.
+- Enable CORS on the Server: The standard solution is to use the cors npm package in Express server.
 - We can allow our specific client origin:
 
 ```bash
